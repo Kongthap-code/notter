@@ -1,3 +1,5 @@
+scalar JWT
+
 type User {
     user_id: Int,
     username: String,
@@ -5,5 +7,10 @@ type User {
 }
 
 type Query {
-  user: [User]
+  users: [User!]!
+}
+
+type Mutation {
+  register(username: String!,password: String!,name: String!): JWT!
+  login(username: String!,password: String!): JWT!
 }
